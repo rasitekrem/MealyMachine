@@ -1,0 +1,61 @@
+<html>
+  <head>
+      <script src="js/mealy.js">
+
+      </script>
+  </head>
+  <body>
+    <h1> Mealy Machine </h1>
+    <h2>First Step</h2>
+    <form action="" method="post">
+        <label for="stateLenght">State Lenght: </label> <input  type="number" id="stateLenght" value="">
+        <label for="inputAlphabet">Input Alphabet: </label><input  type="text" id="inputAlphabet" value="">
+        <label for="outputAlphabet">Output Alphabet: </label><input  type="text" id="outputAlphabet" value=""><br>
+        <input type="button" id="addButton" value="Create"  onclick="add();">
+        <input type="button" id="clearAll" value="Clear All" onclick="location.reload(true);">
+    </form>
+    <form action="" method="post" id="optionsPanel" hidden="">
+        <h2>Second Step(Create Transition Diagram)</h2>
+
+        Input state : <select id="selectState">
+
+        </select>
+        Input Letter : <select id="selectLetter">
+
+        </select>
+        Output Letter : <select id="selectOutput">
+
+        </select>
+        Next State : <select id="selectNextState">
+
+        </select>
+        <input type="button" onclick="tableAdd();" value="Add">
+    </form>
+    <div id="list" hidden="">
+
+      <h2>Third Step(Table Confirm)</h2>
+      <form id="listTable" action="" method="post" >
+          <table id='table' border="1">
+
+              <tr>
+                <th>Old State</th>
+                <th>Input</th>
+                <th>Output</th>
+                <th>New State</th>
+              </tr>
+
+          </table>
+          <input type="button" value="Confirm" onclick="document.getElementById('search').style.display = 'block'">
+      </form>
+    </div>
+    <div id="search" hidden>
+      <h2>Final Step(Search Word)</h2>
+        <input type="text" id="searchWord" value="">
+        <input type="button" value="Search" onclick="searchTable();">
+        <div id="divList">
+
+        </div>
+
+    </div>
+  </body>
+</html>
